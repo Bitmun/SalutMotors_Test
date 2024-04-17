@@ -1,17 +1,23 @@
 .paginationWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem ;
+  padding: 1rem 0;
+
   button {
-    min-width: 2.5rem;
+    width: 2.2rem;
     margin: 0;
     padding: 0.5rem;
     border: none;
     background: none;
-    color: rgb(38, 136, 136);
+    font-size: 0.6rem;
+    color: rgba(0, 0, 255, 0.61);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     outline: none;
 
     &:disabled {
       background-color: rgb(209, 209, 209);
-      color: rgb(27, 100, 100);
+      color: rgb(48, 48, 255);
     }
 
     &:not(.selected):not(:disabled):hover {
