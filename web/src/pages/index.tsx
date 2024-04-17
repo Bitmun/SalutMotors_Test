@@ -29,7 +29,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext): Promis
   try {
     const { query } = ctx;
 
-    const { limit = PAGINATION.BUYERS.limit, offset = 0 } = query;
+    const { limit = PAGINATION.BUYERS.LIMIT, offset = 0 } = query;
 
     const res = await fetch(`http://localhost:3001/users?limit=${limit}&offset=${offset}`, { method: "GET" });
     if (!res.ok) {
@@ -76,7 +76,6 @@ export default function Home({ statusCode, users }: TGetServerSideProps) {
       <main className={inter.className}>
         <Container>
           <h1 className={"mb-5"}>Пользователи</h1>
-
           <Table striped bordered hover>
             <thead>
               <tr>

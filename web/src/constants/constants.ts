@@ -4,7 +4,6 @@ export const AMOUNT = {
 
 export const PAGINATION = {
   BUYERS: {
-    limit: 20,
-    breakdown: 10,
+    LIMIT: 20,
   },
 };
