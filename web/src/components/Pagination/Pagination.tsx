@@ -22,32 +22,25 @@ export const Pagination = ({ displayPageAmount = 10, setPageChange, maxPages, cu
 
   const renderPageButtons = () => {
     const pageButtons = [];
-
     const halfDisplayAmount = Math.floor(displayPageAmount / 2);
-
     let startPage = currentPage - halfDisplayAmount;
-
-    let endPage = currentPage + halfDisplayAmount;
+    let endPage = currentPage + halfDisplayAmount - 1;
 
     if (startPage < 1) {
       endPage += Math.abs(startPage) + 1;
-
       startPage = 1;
     }
 
     if (endPage > maxPages) {
       startPage -= endPage - maxPages;
-
       endPage = maxPages;
     }
 
     const isFirstPagePresent = startPage === 1;
-
     const isLastPagePresent = endPage === maxPages;
 
     for (let page = startPage; page <= endPage; page++) {
       const isCurrentPage = page === currentPage;
-
       pageButtons.push(
         <button key={page} onClick={() => setPageChange(page)} className={isCurrentPage ? styles.selected : ""}>
           {page}
@@ -66,5 +59,5 @@ export const Pagination = ({ displayPageAmount = 10, setPageChange, maxPages, cu
     );
   };
 
-  return <div className="paginationWrapper">{renderPageButtons()}</div>;
+  return renderPageButtons();
 };
